@@ -9,6 +9,6 @@ public class feedController {
 
     @GetMapping(path = "/api/feed")
     public String status() {
-        return "Abel ama Fabricio";
+        return "Feed Filmes";
     }
 }
