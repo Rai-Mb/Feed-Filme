@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class feedController {
 
     @GetMapping(path = "/api/feed")
-    public String status() {
+    public String check() {
+
         return "Feed Filmes";
     }
 }

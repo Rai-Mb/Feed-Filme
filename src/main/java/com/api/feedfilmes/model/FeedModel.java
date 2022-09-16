@@ -13,8 +13,7 @@ import java.util.UUID;
 public class FeedModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
-        @Id
-        private UUID id;
+
         @Column(nullable = false, unique = true, length = 10)
         private String nomeDoFilme;
         @Column(nullable = false, length = 10)
@@ -23,14 +22,6 @@ public class FeedModel implements Serializable {
         private int classeDeIdade;
         @Column(nullable = false, length = 2)
         private String feedbackDoFilme;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
 
     public String getNomeDoFilme() {
         return nomeDoFilme;
