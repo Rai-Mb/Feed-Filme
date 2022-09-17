@@ -1,16 +1,22 @@
 package com.api.feedfilmes.Dto;
 
 
-import org.springframework.lang.Nullable;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
-public class feedDto {
+public class FeedDto {
 
-
+    @NotBlank
     private String nomeDoFilme;
+    @NotBlank
     private String genero;
+    @NotBlank
     private int classeDeIdade;
-    @Nullable
-    private String feedbackDoFilme;
+    @Size(max = 5)
+    @NotBlank
+    private String lancamento;
+    @NotBlank
+    private String feedBack;
 
     public String getNomeDoFilme() {
         return nomeDoFilme;
@@ -36,12 +42,19 @@ public class feedDto {
         this.classeDeIdade = classeDeIdade;
     }
 
-    @Nullable
-    public String getFeedbackDoFilme() {
-        return feedbackDoFilme;
+    public String getLancamento() {
+        return lancamento;
     }
 
-    public void setFeedbackDoFilme(@Nullable String feedbackDoFilme) {
-        this.feedbackDoFilme = feedbackDoFilme;
+    public void setLancamento(String lancamento) {
+        this.lancamento = lancamento;
+    }
+
+    public String getFeedBack() {
+        return feedBack;
+    }
+
+    public void setFeedBack(String feedBack) {
+        this.feedBack = feedBack;
     }
 }
