@@ -15,6 +15,6 @@ public class FeedFilmesApplication {
 
 	@GetMapping("/")
 	public String index(){
-		return "Bota pra tora!";
+		return "Bora Bill!";
 	}
 }

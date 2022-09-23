@@ -1,4 +1,4 @@
-package com.api.feedfilmes.Dto;
+package com.api.feedfilmes.dto;
 
 
 import javax.validation.constraints.NotBlank;
@@ -11,9 +11,10 @@ public class FeedDto {
     @NotBlank
     private String genero;
     @NotBlank
+    @Size(max = 2)
     private int classeDeIdade;
-    @Size(max = 5)
     @NotBlank
+    @Size(max = 10)
     private String lancamento;
     @NotBlank
     private String feedBack;

@@ -14,16 +14,17 @@ public class FeedModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column(nullable = false, unique = true, length = 10)
+    @Column(nullable = false)
     private LocalDateTime dataDeRegistro;
+    @Column(nullable = false, length = 100)
     private String nomeDoFilme;
-    @Column(nullable = false, length = 20)
+    @Column(nullable = false, length = 50)
     private String genero;
-    @Column(nullable = false, length = 10)
+    @Column(nullable = false, length = 2)
     private int classeDeIdade;
-    @Column(nullable = false, length = 5)
-    private String lancamento;
     @Column(nullable = false, length = 10)
+    private String lancamento;
+    @Column(nullable = false, length = 1000)
     private String feedBack;
 
     public UUID getId() {
