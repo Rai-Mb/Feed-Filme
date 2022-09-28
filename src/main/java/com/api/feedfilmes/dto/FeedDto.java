@@ -7,24 +7,23 @@ import javax.validation.constraints.Size;
 public class FeedDto {
 
     @NotBlank
-    private String nomeDoFilme;
+    private String nome_Do_Filme;
     @NotBlank
     private String genero;
-    @NotBlank
-    @Size(max = 2)
-    private int classeDeIdade;
+
+    private String classe_De_Idade;
     @NotBlank
     @Size(max = 10)
     private String lancamento;
     @NotBlank
-    private String feedBack;
+    private String feed_Back;
 
-    public String getNomeDoFilme() {
-        return nomeDoFilme;
+    public String getNome_Do_Filme() {
+        return nome_Do_Filme;
     }
 
-    public void setNomeDoFilme(String nomeDoFilme) {
-        this.nomeDoFilme = nomeDoFilme;
+    public void setNome_Do_Filme(String nome_Do_Filme) {
+        this.nome_Do_Filme = nome_Do_Filme;
     }
 
     public String getGenero() {
@@ -35,12 +34,12 @@ public class FeedDto {
         this.genero = genero;
     }
 
-    public int getClasseDeIdade() {
-        return classeDeIdade;
+    public String getClasse_De_Idade() {
+        return classe_De_Idade;
     }
 
-    public void setClasseDeIdade(int classeDeIdade) {
-        this.classeDeIdade = classeDeIdade;
+    public void setClasse_De_Idade(String classe_De_Idade) {
+        this.classe_De_Idade = classe_De_Idade;
     }
 
     public String getLancamento() {
@@ -52,10 +51,10 @@ public class FeedDto {
     }
 
     public String getFeedBack() {
-        return feedBack;
+        return feed_Back;
     }
 
-    public void setFeedBack(String feedBack) {
-        this.feedBack = feedBack;
+    public void setFeed_Back(String feedBack) {
+        this.feed_Back = feed_Back;
     }
 }

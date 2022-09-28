@@ -15,17 +15,17 @@ public class FeedModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false)
-    private LocalDateTime dataDeRegistro;
+    private LocalDateTime data_De_Registro;
     @Column(nullable = false, length = 100)
-    private String nomeDoFilme;
+    private String nome_Do_Filme;
     @Column(nullable = false, length = 50)
     private String genero;
-    @Column(nullable = false, length = 2)
-    private int classeDeIdade;
+    @Column(length = 30)
+    private String classe_De_Idade;
     @Column(nullable = false, length = 10)
     private String lancamento;
     @Column(nullable = false, length = 1000)
-    private String feedBack;
+    private String feed_Back;
 
     public UUID getId() {
         return id;
@@ -36,18 +36,18 @@ public class FeedModel implements Serializable {
     }
 
     public LocalDateTime getRegistrationDate() {
-        return dataDeRegistro;
+        return data_De_Registro;
     }
 
     public void setRegistrationDate(LocalDateTime registrationDate) {
-        this.dataDeRegistro = registrationDate;
+        this.data_De_Registro = registrationDate;
     }
     public String getNomeDoFilme() {
-        return nomeDoFilme;
+        return nome_Do_Filme;
     }
 
-    public void setNomeDoFilme(String nomeDoFilme) {
-        this.nomeDoFilme = nomeDoFilme;
+    public void setNome_Do_Filme(String nomeDoFilme) {
+        this.nome_Do_Filme = nomeDoFilme;
     }
 
     public String getGenero() {
@@ -58,12 +58,12 @@ public class FeedModel implements Serializable {
         this.genero = genero;
     }
 
-    public int getClasseDeIdade() {
-        return classeDeIdade;
+    public String getClasse_De_Idade() {
+        return classe_De_Idade;
     }
 
-    public void setClasseDeIdade(int classeDeIdade) {
-        this.classeDeIdade = classeDeIdade;
+    public void setClasse_De_Idade(String classe_De_Idade) {
+        this.classe_De_Idade = classe_De_Idade;
     }
 
     public String getLancamento() {
@@ -74,11 +74,11 @@ public class FeedModel implements Serializable {
         this.lancamento = lancamento;
     }
 
-    public String getFeedBack() {
-        return feedBack;
+    public String getFeed_Back() {
+        return feed_Back;
     }
 
-    public void setFeedBack(String feedBack) {
-        this.feedBack = feedBack;
+    public void setFeed_Back(String feed_Back) {
+        this.feed_Back = feed_Back;
     }
 }

@@ -39,7 +39,8 @@ public class FeedController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<FeedModel>> getAllfeedFilmes(@PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable){
+    public ResponseEntity<Page<FeedModel>> getAllfeedFilmes(@PageableDefault(page = 0, size = 10,
+            sort = "id", direction = Sort.Direction.ASC) Pageable pageable){
         return  ResponseEntity.status(HttpStatus.OK).body(feedService.findAll(pageable));
     }
     @GetMapping("/{id}")
@@ -68,11 +69,11 @@ public class FeedController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Filme não encontrado.");
         }
         var feedModel = feedModelOptional.get();
-        feedModel.setNomeDoFilme(feedDto.getNomeDoFilme());
+        feedModel.setNome_Do_Filme(feedDto.getNome_Do_Filme());
         feedModel.setGenero(feedDto.getGenero());
-        feedModel.setClasseDeIdade(feedDto.getClasseDeIdade());
+        feedModel.setClasse_De_Idade(feedDto.getClasse_De_Idade());
         feedModel.setLancamento(feedDto.getLancamento());
-        feedModel.setFeedBack(feedModel.getFeedBack());
+        feedModel.setFeed_Back(feedModel.getFeed_Back());
         return ResponseEntity.status(HttpStatus.OK).body(feedService.save(feedModel));
     }
 }
