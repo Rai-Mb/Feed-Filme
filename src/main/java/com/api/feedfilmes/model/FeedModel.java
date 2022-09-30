@@ -7,7 +7,7 @@ import java.util.UUID;
 
 
 @Entity
-@Table(name = "TB_FILME")
+@Table(name = "TBFILME")
 public class FeedModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -15,17 +15,17 @@ public class FeedModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(nullable = false)
-    private LocalDateTime data_De_Registro;
+    private LocalDateTime dataDeRegistro;
     @Column(nullable = false, length = 100)
-    private String nome_Do_Filme;
+    private String nomeDoFilme;
     @Column(nullable = false, length = 50)
     private String genero;
     @Column(length = 30)
-    private String classe_De_Idade;
+    private String classeDeIdade;
     @Column(nullable = false, length = 10)
     private String lancamento;
     @Column(nullable = false, length = 1000)
-    private String feed_Back;
+    private String feedBack;
 
     public UUID getId() {
         return id;
@@ -36,18 +36,18 @@ public class FeedModel implements Serializable {
     }
 
     public LocalDateTime getRegistrationDate() {
-        return data_De_Registro;
+        return dataDeRegistro;
     }
 
     public void setRegistrationDate(LocalDateTime registrationDate) {
-        this.data_De_Registro = registrationDate;
+        this.dataDeRegistro = registrationDate;
     }
     public String getNomeDoFilme() {
-        return nome_Do_Filme;
+        return nomeDoFilme;
     }
 
-    public void setNome_Do_Filme(String nomeDoFilme) {
-        this.nome_Do_Filme = nomeDoFilme;
+    public void setNomeDoFilme(String nomeDoFilme) {
+        this.nomeDoFilme = nomeDoFilme;
     }
 
     public String getGenero() {
@@ -58,12 +58,12 @@ public class FeedModel implements Serializable {
         this.genero = genero;
     }
 
-    public String getClasse_De_Idade() {
-        return classe_De_Idade;
+    public String getClasseDeIdade() {
+        return classeDeIdade;
     }
 
-    public void setClasse_De_Idade(String classe_De_Idade) {
-        this.classe_De_Idade = classe_De_Idade;
+    public void setClasseDeIdade(String classeDeIdade) {
+        this.classeDeIdade = classeDeIdade;
     }
 
     public String getLancamento() {
@@ -74,11 +74,11 @@ public class FeedModel implements Serializable {
         this.lancamento = lancamento;
     }
 
-    public String getFeed_Back() {
-        return feed_Back;
+    public String getFeedBack() {
+        return feedBack;
     }
 
-    public void setFeed_Back(String feed_Back) {
-        this.feed_Back = feed_Back;
+    public void setFeedBack(String feedBack) {
+        this.feedBack = feedBack;
     }
 }

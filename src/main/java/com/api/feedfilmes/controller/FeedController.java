@@ -21,7 +21,7 @@ import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/feedfilmes")
+@RequestMapping("/feedFilmes")
 public class FeedController {
 
     final FeedService feedService;
@@ -31,7 +31,7 @@ public class FeedController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> saveFeedFilmes(@RequestBody @Valid FeedDto feedDto){
+    public ResponseEntity<Object> saveFeedFilmes(@RequestBody FeedDto feedDto){
         var feedModel = new FeedModel();
         BeanUtils.copyProperties(feedDto, feedModel);
         feedModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
@@ -39,7 +39,7 @@ public class FeedController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<FeedModel>> getAllfeedFilmes(@PageableDefault(page = 0, size = 10,
+    public ResponseEntity<Page<FeedModel>> getAllFeedFilmes(@PageableDefault(page = 0, size = 10,
             sort = "id", direction = Sort.Direction.ASC) Pageable pageable){
         return  ResponseEntity.status(HttpStatus.OK).body(feedService.findAll(pageable));
     }
@@ -69,11 +69,11 @@ public class FeedController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Filme não encontrado.");
         }
         var feedModel = feedModelOptional.get();
-        feedModel.setNome_Do_Filme(feedDto.getNome_Do_Filme());
+        feedModel.setNomeDoFilme(feedDto.getNomeDoFilme());
         feedModel.setGenero(feedDto.getGenero());
-        feedModel.setClasse_De_Idade(feedDto.getClasse_De_Idade());
+        feedModel.setClasseDeIdade(feedDto.getClasseDeIdade());
         feedModel.setLancamento(feedDto.getLancamento());
-        feedModel.setFeed_Back(feedModel.getFeed_Back());
+        feedModel.setFeedBack(feedModel.getFeedBack());
         return ResponseEntity.status(HttpStatus.OK).body(feedService.save(feedModel));
     }
 }

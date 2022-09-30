@@ -4,26 +4,31 @@ package com.api.feedfilmes.dto;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class FeedDto {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+
+public class FeedDto {
+    @JsonProperty("nome_do_filme")
     @NotBlank
-    private String nome_Do_Filme;
+    private String nomeDoFilme;
     @NotBlank
     private String genero;
-
-    private String classe_De_Idade;
+    @JsonProperty("classe_de_idade")
+    @Size(max = 10)
+    private String classeDeIdade;
     @NotBlank
     @Size(max = 10)
     private String lancamento;
+    @JsonProperty("feed_back")
     @NotBlank
-    private String feed_Back;
+    private String feedBack;
 
-    public String getNome_Do_Filme() {
-        return nome_Do_Filme;
+    public String getNomeDoFilme() {
+        return nomeDoFilme;
     }
 
-    public void setNome_Do_Filme(String nome_Do_Filme) {
-        this.nome_Do_Filme = nome_Do_Filme;
+    public void setNomeDoFilme(String nomeDoFilme) {
+        this.nomeDoFilme = nomeDoFilme;
     }
 
     public String getGenero() {
@@ -34,12 +39,12 @@ public class FeedDto {
         this.genero = genero;
     }
 
-    public String getClasse_De_Idade() {
-        return classe_De_Idade;
+    public String getClasseDeIdade() {
+        return classeDeIdade;
     }
 
-    public void setClasse_De_Idade(String classe_De_Idade) {
-        this.classe_De_Idade = classe_De_Idade;
+    public void setClasseDeIdade(String classeDeIdade) {
+        this.classeDeIdade = classeDeIdade;
     }
 
     public String getLancamento() {
@@ -51,10 +56,10 @@ public class FeedDto {
     }
 
     public String getFeedBack() {
-        return feed_Back;
+        return feedBack;
     }
 
-    public void setFeed_Back(String feedBack) {
-        this.feed_Back = feed_Back;
+    public void setFeedBack(String feedBack) {
+        this.feedBack = feedBack;
     }
 }
