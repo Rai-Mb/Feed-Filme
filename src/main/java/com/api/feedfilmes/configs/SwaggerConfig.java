@@ -20,16 +20,15 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.api.parkingcontrol"))
+                .apis(RequestHandlerSelectors.basePackage("com.api.feedfilmes"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
     }
-
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Parking Control")
-                .description("Controle de estacionamento de condomínio")
+                .title("Feed Filmes")
+                .description("Criar feedback sobre filmes ja visto")
                 .version("1.0.0")
                 .contact(new Contact("Raí Barreira", "https://github.com/Rai-Mb", "rmbraibarreira@gmail.com"))
                 .build();

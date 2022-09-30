@@ -7,7 +7,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -19,22 +18,16 @@ public class FeedService {
     public FeedService(FeedRepository feedRepository){
         this.feedRepository = feedRepository;
     }
-
-
-
     @Transactional
     public FeedModel save(FeedModel feedModel) {
         return feedRepository.save(feedModel);
     }
-
     public Page<FeedModel> findAll(Pageable pageable){
         return feedRepository.findAll(pageable);
     }
-
     public Optional<FeedModel> findByid(UUID id) {
         return feedRepository.findById(id);
     }
-
     @Transactional
     public void delete(FeedModel feedModel) {
         feedRepository.delete(feedModel);

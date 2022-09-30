@@ -7,7 +7,7 @@ import java.util.UUID;
 
 
 @Entity
-@Table(name = "TBFILME")
+@Table(name = "TB_FILME")
 public class FeedModel implements Serializable {
     private static final long serialVersionUID = 1L;
 

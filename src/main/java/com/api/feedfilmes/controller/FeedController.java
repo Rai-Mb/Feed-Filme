@@ -1,6 +1,5 @@
 package com.api.feedfilmes.controller;
 
-
 import com.api.feedfilmes.dto.FeedDto;
 import com.api.feedfilmes.model.FeedModel;
 import com.api.feedfilmes.service.FeedService;
@@ -29,7 +28,6 @@ public class FeedController {
     public FeedController(FeedService feedService) {
         this.feedService = feedService;
     }
-
     @PostMapping
     public ResponseEntity<Object> saveFeedFilmes(@RequestBody FeedDto feedDto){
         var feedModel = new FeedModel();
@@ -37,7 +35,6 @@ public class FeedController {
         feedModel.setRegistrationDate(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(feedService.save(feedModel));
     }
-
     @GetMapping
     public ResponseEntity<Page<FeedModel>> getAllFeedFilmes(@PageableDefault(page = 0, size = 10,
             sort = "id", direction = Sort.Direction.ASC) Pageable pageable){
@@ -60,7 +57,6 @@ public class FeedController {
         feedService.delete(feedModelOptional.get());
         return ResponseEntity.status(HttpStatus.OK).body("Filme deletado com sucesso.");
     }
-
     @PutMapping("/{id}")
     public ResponseEntity<Object> updadteFeedFilmes(@PathVariable(value = "id") UUID id,
                                                     @RequestBody @Valid FeedDto feedDto){
